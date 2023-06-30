@@ -1,0 +1,27 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+  }
+button{cursor: pointer;}
+.wrap{width: 1500px; margin: 0 auto; padding: 0 20px;}
+.wrap h1{display: flex; align-items: center; gap: 25px; margin-bottom: 100px;}
+.example{width: 100%;}
+.example table{width: 100%;}
+
+  th,
+  td {
+    font: 12px sans-serif;
+    text-align: center !important;
+  }
+  .name {
+    color: #3F51B5;
+    font-weight: bold;
+  }
+
+.handsontable .htCore th{font-weight: 600;  background: #f9f9f9;}
+.handsontable .htCore td:first-child{text-align: center;}
+.handsontable .htCore tr:nth-child(2n) td{background: #f6f6f6;}
+.handsontable .handsontableInputHolder tr:nth-child(2n) td{background: #fff;}
+.handsontable td.htInvalid{background: transparent !important;}
+#export-file{float: right; margin: 0 20px 20px 0; padding: 8px 20px; border: none; background: #333; color: #fff; font-weight: bold;}

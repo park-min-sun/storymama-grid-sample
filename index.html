@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이야기할머니 그리드 샘플 페이지</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <h1><img src="./img/logo.png" alt="">그리드 샘플 페이지</h1>
+        <div class="table_wrap"><button id="export-file">엑셀 다운로드</button>
+            <div id="example" class="hot1 hot handsontable"></div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script>
+        const container = document.querySelector('#example');
+        const hot = new Handsontable(container, {
+        data: [
+        { available: false, no: '1', name: '강경숙', ID: 20230001, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '세종대학교 컨벤션센터', attend: 'Y', completion: 'N', teacher1: '100', res1: '150', t_total:'70', r_total:'100', result: ''},
+        { available: false, no: '2', name: '강계남', ID: 20230002, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '위드스페이스', attend: 'Y', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '3', name: '강기순', ID: 20230003, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '세종대학교 컨벤션센터', attend: 'N', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '4', name: '강기인', ID: 20230004, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '세종대학교 컨벤션센터', attend: 'N', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '5', name: '강미숙', ID: 20230005, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '위드스페이스', attend: 'Y', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '6', name: '강정원', ID: 20230006, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '위드스페이스', attend: 'Y', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '7', name: '강효선', ID: 20230007, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '위드스페이스', attend: 'Y', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '8', name: '강경숙', ID: 20230008, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '위드스페이스', attend: 'Y', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '9', name: '강경숙', ID: 20230009, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '위드스페이스', attend: 'Y', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+        { available: false, no: '10', name: '강경숙', ID: 20230010, status: '정상', situation: '신규', edu_name1: '2반', edu_date1: '2023-05-18', place: '위드스페이스', attend: 'Y', completion: 'N', teacher1: '1', res1: '1', t_total:'100', r_total:'100', result: ''},
+
+        ],
+        colHeaders: ['', 'No', '할머니명', '할머니ID', '활동현황', '상태', '교육명 1차', '교육일 1차', '교육장 1차', '참석여부 1차', '수료여부 1차', '강사 1차', '연구원 1차', '강사총점', '연구원총점', '최종결과' ],
+        width: '100%',
+        height: 'auto',
+        colWidths: [50, 50, 100, 80, 60, 60, 80, 100, 200, 100, 100, 100, 100, 100, 100, 100],
+        manualColumnResize: true,
+        height: 'auto',
+        columns: [
+            {
+            data: 'available',
+            type: 'checkbox'
+            },
+            {
+            data: 'no',
+            },
+            {
+            data: 'name',
+            },
+            {
+            data: 'ID',
+            },
+            {
+            data: 'status',
+            },
+            {
+            data: 'situation',
+            },
+            {
+            data: 'edu_name1',
+            },
+            {
+            data: 'edu_date1',
+            },
+            {
+            data: 'place',
+            },
+            {
+            data: 'attend',
+            type: 'dropdown',
+            source: ['Y', 'N',]
+            },
+            {
+            data: 'completion',
+            type: 'dropdown',
+            source: ['Y', 'N',]
+            },
+            {
+            data: 'teacher1',
+            },
+            {
+            data: 'res1',
+            },
+            {
+            data: 't_total',
+            },
+            {
+            data: 'r_total',
+            },
+            {
+            data: 'result',
+            },
+           
+        ],
+        licenseKey: 'non-commercial-and-evaluation'
+        });
+
+        var button = document.getElementById('export-file');
+        var exportPlugin = hot.getPlugin('exportFile');
+
+        button.addEventListener('click', function() {
+           // export as a string
+            exportPlugin.exportAsString('csv');
+
+            // export as a blob object
+            exportPlugin.exportAsBlob('csv');
+
+            // export to downloadable file (named: MyFile.csv)
+            exportPlugin.downloadFile('csv', {filename: 'MyFile'});
+
+            // export as a string (with specified data range):
+            exportPlugin.exportAsString('csv', {
+            exportHiddenRows: true,     // default false
+            exportHiddenColumns: true,  // default false
+            columnHeaders: true,        // default false
+            rowHeaders: true,           // default false
+            columnDelimiter: ';',       // default ','
+            range: [1, 1, 6, 6]         // [startRow, endRow, startColumn, endColumn]
+            });
+        });
+
+    </script>
+</body>
+</html>

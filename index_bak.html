@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+
+</head>
+<body>
+    <div id="table"></div>
+
+    <script>
+        // HTML 요소 가져오기
+    const container = document.getElementById('table');
+
+    const options = {
+    data: [
+        ['Apple', 'Orange', 'Banana'],
+        ['New Value 1', 'New Value 2', 'New Value 3'],
+        [5, 12, 7]
+    ],
+    rowHeaders: true,
+    colHeaders: true
+    };
+
+    // Handsontable 인스턴스 생성
+    const table = new Handsontable(container, options);
+
+    </script>
+</body>
+</html>
